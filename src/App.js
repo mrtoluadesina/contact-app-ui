@@ -9,6 +9,7 @@ import Header from './components/Header';
 import Contacts from './components/Contacts';
 import Blocked from './components/Blocked';
 import CreateContact from './components/CreateContact';
+import Contact from './components/Contact';
 
 import './App.css';
 
@@ -28,6 +29,7 @@ function App() {
         <Header />
         <Router>
           <Contacts path="/" />
+          <Contact path="/contact/:id" />
           <Blocked path="/blocked" />
           <CreateContact path="/create-contact" />
         </Router>
