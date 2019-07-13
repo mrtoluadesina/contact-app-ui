@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import { Link } from '@reach/router';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
@@ -20,7 +22,7 @@ const Contact = styled.li`
   text-align: unset;
 `;
 
-export default function Contacts() {
+export default function Contacts(props) {
   const [ contacts, setContacts ] = useState([])
 
   useEffect(() => {
@@ -32,16 +34,16 @@ export default function Contacts() {
       <ul className="contacts-list">
         {contacts.map((contact, index) => (
           <Contact className="contacts-item" key={index}>
-            <div className="contact-section">
+            <Link to={`/contact/${contact._id}`} className="contact-section" state={contact}>
               <img src={user} alt={contact.name} />
               <h3>
                 {contact.name}
                 {contact.isBlocked ? <small>BLOCKED</small> : ''}
               </h3>
-            </div>
-            <div className="contact-section">
+            </Link>
+            <Link to={`/edit/${contact._id}`} state={contact}>
               <FontAwesomeIcon icon={faPencilAlt} />
-            </div>
+            </Link>
           </Contact>
         ))}
       </ul>
