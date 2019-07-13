@@ -7,22 +7,6 @@ import Nav from './Nav';
 import Button from './Button';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
-// const LUKE = gql`
-//   query {
-//     person @rest(type: "Get", path: "people/1") {
-//       name
-//     }
-//   }
-// `;
-
-// const BLOCKED = gql`
-//   query blocked {
-//     blocked @rest(type: "Blocked", path: "contacts/") {
-//       name
-//     }
-//   }
-// `;
-
 const GET_BLOCKED = gql`
   query blocked {
     blocked @rest(type: "Blocked", path: "contacts/") {
@@ -45,7 +29,6 @@ export default function Blocked() {
             <span>I am loading ... </span>
           ) : (
             <>
-              {console.log(data)}
               {data.blocked.map(item => (
                 item.name
               ))}
