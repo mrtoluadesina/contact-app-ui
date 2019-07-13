@@ -12,7 +12,8 @@ import CreateContact from './components/CreateContact';
 
 import './App.css';
 
-const restLink = new RestLink({ uri: "https://swapi.co/api/" });
+const restLink = new RestLink({ uri: "http://localhost:3500/api/" });
+
 
 // setup your client
 const client = new ApolloClient({
