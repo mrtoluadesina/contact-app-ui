@@ -10,6 +10,7 @@ import Contacts from './components/Contacts';
 import Blocked from './components/Blocked';
 import CreateContact from './components/CreateContact';
 import Contact from './components/Contact';
+import EditContact from './components/EditContact';
 
 import './App.css';
 
@@ -30,6 +31,7 @@ function App() {
         <Router>
           <Contacts path="/" />
           <Contact path="/contact/:id" />
+          <EditContact path="/edit/:id" />
           <Blocked path="/blocked" />
           <CreateContact path="/create-contact" />
         </Router>
